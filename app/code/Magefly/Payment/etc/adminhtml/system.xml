@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="mageflypayment" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Magefly Payments]]></label>
+                <comment><![CDATA[IsBank, GiroGate]]></comment>
+                <attribute type="displayIn">recommended_solutions</attribute>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Magefly Payments</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/mageflypayment/active</config_path>
+                </field>
+                <field id="environment" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Environment</label>
+                    <source_model>Magefly\Payment\Model\Adminhtml\Source\Environment</source_model>
+                    <config_path>payment/mageflypayment/environment</config_path>
+                </field>
+                <group id="mageflypayment_isbank" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                    <label>ISBANK</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                    <comment>
+                        <![CDATA[
+                            ISBANK Configuration Settings
+                            ]]>
+                    </comment>
+                    <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable Isbank Payment</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/mageflypayment_isbank/active</config_path>
+                        <comment>
+                            <![CDATA[Please check your merchant details carefully.]]>
+                        </comment>
+                    </field>
+                    <field id="payment_action" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Payment Action</label>
+                        <source_model>\Magefly\Payment\Model\Adminhtml\Source\PaymentAction</source_model>
+                        <config_path>payment/mageflypayment_isbank/payment_action</config_path>
+                    </field>
+                    <field id="test_client_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Client ID</label>
+                        <config_path>payment/mageflypayment_isbank/test_client_id</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                        <comment>
+                            <![CDATA[Example : 700655000100]]>
+                        </comment>
+                    </field>
+                    <field id="test_client_username" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Client Username</label>
+                        <config_path>payment/mageflypayment_isbank/test_client_username</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                        <comment>
+                            <![CDATA[Example : ISBANKAPI]]>
+                        </comment>
+                    </field>
+                    <field id="test_client_password" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Client Password</label>
+                        <config_path>payment/mageflypayment_isbank/test_client_password</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                        <comment>
+                            <![CDATA[Example : ISBANK07]]>
+                        </comment>
+                    </field>
+                    <field id="live_client_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Client ID</label>
+                        <config_path>payment/mageflypayment_isbank/test_client_id</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_client_username" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Client Username</label>
+                        <config_path>payment/mageflypayment_isbank/test_client_username</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_client_password" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Client Password</label>
+                        <config_path>payment/mageflypayment_isbank/test_client_password</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                </group>
+                <group id="mageflypayment_girogate" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
+                    <label>GIROGATE</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                    <comment>
+                        <![CDATA[GIROGATE Configuration Settings]]>
+                    </comment>
+                    <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable Girogate Payment</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/mageflypayment_girogate/active</config_path>
+                        <comment>
+                            <![CDATA[Please check your merchant details carefully.]]>
+                        </comment>
+                    </field>
+                    <field id="payment_action" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Payment Action</label>
+                        <source_model>\Magefly\Payment\Model\Adminhtml\Source\PaymentAction</source_model>
+                        <config_path>payment/mageflypayment_girogate/payment_action</config_path>
+                    </field>
+                    <field id="test_client_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Client ID</label>
+                        <config_path>payment/mageflypayment_girogate/test_client_id</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                        <comment>
+                            <![CDATA[Example : 700655000100]]>
+                        </comment>
+                    </field>
+                    <field id="test_client_username" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Client Username</label>
+                        <config_path>payment/mageflypayment_girogate/test_client_username</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                        <comment>
+                            <![CDATA[Example : ISBANKAPI]]>
+                        </comment>
+                    </field>
+                    <field id="test_client_password" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Client Password</label>
+                        <config_path>payment/mageflypayment_girogate/test_client_password</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                        <comment>
+                            <![CDATA[Example : ISBANK07]]>
+                        </comment>
+                    </field>
+                    <field id="test_endpoint" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Endpoint URL</label>
+                        <config_path>payment/mageflypayment_girogate/test_endpoint</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="test_order_history_endpoint" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Test Environment Order History Endpoint URL</label>
+                        <config_path>payment/mageflypayment_girogate/test_order_history_endpoint</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_client_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Client ID</label>
+                        <config_path>payment/mageflypayment_girogate/live_client_id</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_client_username" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Client Username</label>
+                        <config_path>payment/mageflypayment_girogate/live_client_username</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_client_password" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Client Password</label>
+                        <config_path>payment/mageflypayment_girogate/live_client_password</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_endpoint" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Endpoint URL</label>
+                        <config_path>payment/mageflypayment_girogate/live_endpoint</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                    <field id="live_order_history_endpoint" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Live Environment Order History Endpoint URL</label>
+                        <config_path>payment/mageflypayment_girogate/live_order_history_endpoint</config_path>
+                        <frontend_class>required-entry</frontend_class>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

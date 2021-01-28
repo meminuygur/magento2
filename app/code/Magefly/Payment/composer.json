@@ -1,0 +1,23 @@
+{
+    "name": "magefly/payment",
+    "version": "1.0.0",
+    "description": "Magento2 Payment module for Turkish Banks Payment Gateways",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-payment": "100.3.*",
+        "magento/module-checkout": "100.3.*",
+        "magento/module-sales": "100.3.*"
+    },
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magefly\\Payment\\": ""
+        }
+    }
+}
